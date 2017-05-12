@@ -19,8 +19,7 @@ $id = $_GET['id'];
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Title</th>
-        
+                    <th>Question</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,8 +38,7 @@ $id = $_GET['id'];
             </tbody>
             </table>
         </div>
-    </div>
-    <div class="row">
+        
         <div class="col-sm-6">
         <!--Pro Section-->
         <table class="table table-bordered table-striped" style="width:400px">
@@ -93,7 +91,120 @@ $id = $_GET['id'];
             </tbody>
         </table>
         </div>
+    </div>
+    <!-- TEST TEST TEST -->
+    <div class="row">
+        <div class="col-sm-6">
+        <!--Argument Section-->
+        <table class="table table-bordered table-striped" style="width:400px">
+            <thead>
+                <tr>
+                    <th>Argument</th>
+                    <th>Beweise</th>
+                </tr>
+            </thead>
+            <tbody>
+        <?php
+        // SELECT
+        $sql= "SELECT answer, file_upload FROM answers 
+        WHERE mindset = 'Argument' AND question_id = $id";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        foreach($result as $row){
+            echo "<tr><td>{$row['answer']}</td>";
+            echo "<td>{$row['file_upload']}</td>";
+            echo "</tr>";
+        }
+        ?>
+            </tbody>
+        </table>
         </div>
+        <div class="col-sm-6">
+        <!--Counter-argument Section-->
+        <table class="table table-bordered" style="width:400px">
+            <thead>
+                <tr>
+                    <th>Gegenargument</th>
+                    <th>Beweise</th>
+                </tr>
+            </thead>
+            <tbody>
+        <?php
+        // SELECT
+        $sql= "SELECT answer, file_upload FROM answers 
+        WHERE mindset = 'Counter-argument' AND question_id = $id";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        foreach($result as $row){
+            echo "<tr><td>{$row['answer']}</td>";
+            echo "<td>{$row['file_upload']}</td>";
+            echo "</tr>";
+        }
+        ?>
+            </tbody>
+        </table>
+        </div>
+    </div>
+    
+    <!-- TEST TEST TEST -->
+    <div class="row">
+        <div class="col-sm-6">
+        <!--Thesis Section-->
+        <table class="table table-bordered table-striped" style="width:400px">
+            <thead>
+                <tr>
+                    <th>These</th>
+                    <th>Beweise</th>
+                </tr>
+            </thead>
+            <tbody>
+        <?php
+        // SELECT
+        $sql= "SELECT answer, file_upload FROM answers 
+        WHERE mindset = 'Thesis' AND question_id = $id";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        foreach($result as $row){
+            echo "<tr><td>{$row['answer']}</td>";
+            echo "<td>{$row['file_upload']}</td>";
+            echo "</tr>";
+        }
+        ?>
+            </tbody>
+        </table>
+        </div>
+        <div class="col-sm-6">
+        <!--Antithesis Section-->
+        <table class="table table-bordered" style="width:400px">
+            <thead>
+                <tr>
+                    <th>Antithese</th>
+                    <th>Beweise</th>
+                </tr>
+            </thead>
+            <tbody>
+        <?php
+        // SELECT
+        $sql= "SELECT answer, file_upload FROM answers 
+        WHERE mindset = 'Antithesis' AND question_id = $id";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        foreach($result as $row){
+            echo "<tr><td>{$row['answer']}</td>";
+            echo "<td>{$row['file_upload']}</td>";
+            echo "</tr>";
+        }
+        ?>
+            </tbody>
+        </table>
+        </div>
+    </div>
+    
+    
     <div class="row">
         <div class="col-sm-12">
             <!--INNER JOIN Alle Antworten zu der Frage-->

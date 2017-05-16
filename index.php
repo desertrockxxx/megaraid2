@@ -38,6 +38,7 @@ require_once("header.php");
                     <th>Read</th>
                     <th>Update</th>
                     <th>Delete</th>
+                    <th>Wiki</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,13 +50,14 @@ require_once("header.php");
                 $result = $stmt->fetchAll();
                 foreach($result as $row){
                     echo "<tr><td>{$row['id']}</td>";
-                    echo "<td>{$row['question']}</td>";
+                    echo "<td> {$row['question']}</td>";
                     // Lesen von Datensätzen
                     echo "<td><a href='read.php?id={$row['id']}'>read</a></td>";
                     // Link der zu update.php führt und id von Beitrag dranhängt
                     echo "<td><a href='update.php?id={$row['id']}'>o</a></td>";
                     // führt zu index.php und hängt id an delete an
                     echo "<td><a href='?delete={$row['id']}'>x</a></td>";
+                    echo "<td><a href='https://de.wikipedia.org/wiki/{$row['question']}' target='_blank'>wiki</a></td>";
                     echo "</tr>";
                 }
             

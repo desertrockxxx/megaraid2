@@ -52,7 +52,7 @@ $id = $_GET['id'];
         <?php
         // SELECT
         $sql= "SELECT answer, file_upload FROM answers 
-        WHERE mindset = 'Pro' AND question_id = $id";
+        WHERE mindset = 'Advantage' AND question_id = $id";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
@@ -64,7 +64,13 @@ $id = $_GET['id'];
         ?>
             </tbody>
         </table>
+        
+        <button type="button" class="btn btn-success" onclick="location.href='/create.php?id=<?php echo $id;?>&mindset=Advantage';">Create New Advantage</button>
+        
         </div>
+        
+        
+        
         <div class="col-sm-6">
         <!--Contra Section-->
         <table class="table table-bordered" style="width:400px">
@@ -78,7 +84,7 @@ $id = $_GET['id'];
         <?php
         // SELECT
         $sql= "SELECT answer, file_upload FROM answers 
-        WHERE mindset = 'Contra' AND question_id = $id";
+        WHERE mindset = 'Disadvantage' AND question_id = $id";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
@@ -90,6 +96,9 @@ $id = $_GET['id'];
         ?>
             </tbody>
         </table>
+        
+        <button type="button" class="btn btn-success" onclick="location.href='/create.php?id=<?php echo $id;?>&mindset=Disadvantage';">Create New Disadvantage</button>
+        
         </div>
     </div>
     <!-- TEST TEST TEST -->
@@ -119,6 +128,9 @@ $id = $_GET['id'];
         ?>
             </tbody>
         </table>
+        
+        <button type="button" class="btn btn-success" onclick="location.href='/create.php?id=<?php echo $id;?>&mindset=Argument';">Create New Argument</button>
+        
         </div>
         <div class="col-sm-6">
         <!--Counter-argument Section-->
@@ -145,6 +157,9 @@ $id = $_GET['id'];
         ?>
             </tbody>
         </table>
+        
+        <button type="button" class="btn btn-success" onclick="location.href='/create.php?id=<?php echo $id;?>&mindset=Counter-argument';">Create New Counter-argument</button>
+        
         </div>
     </div>
     
@@ -175,6 +190,9 @@ $id = $_GET['id'];
         ?>
             </tbody>
         </table>
+        
+        <button type="button" class="btn btn-success" onclick="location.href='/create.php?id=<?php echo $id;?>&mindset=Thesis';">Create New Thesis</button>
+        
         </div>
         <div class="col-sm-6">
         <!--Antithesis Section-->
@@ -201,6 +219,9 @@ $id = $_GET['id'];
         ?>
             </tbody>
         </table>
+        
+        <button type="button" class="btn btn-success" onclick="location.href='/create.php?id=<?php echo $id;?>&mindset=Antithesis';">Create New Antithesis</button>
+        
         </div>
     </div>
     

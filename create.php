@@ -3,6 +3,8 @@ require_once("header.php");
 
 // get id 
 $id = $_GET['id'];
+
+$mindset = $_GET['mindset'];
 ?>
 
 <div class="container col-sm-12">
@@ -18,6 +20,7 @@ $id = $_GET['id'];
         </div>
         <div>
             <select class="form-control" id="sel1" name="mindset" style="width:175px">
+                <option value='<?php echo $mindset;?>' selected><?php echo $mindset;?></option>
                 <option>Advantage</option>
                 <option>Disadvantage</option>
                 <option>Argument</option>
@@ -37,7 +40,6 @@ $id = $_GET['id'];
         <?php
         // INSERT
         // Wenn answer und file_upload gesetzt, dann beide in Tabelle answer einfügen
-        
         if(isset($_POST['answer']) && !empty($_POST['answer']) &&
             isset($_POST['file_upload']) && !empty($_POST['file_upload']) &&
             isset($_POST['mindset']) && !empty($_POST['mindset']))

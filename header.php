@@ -1,4 +1,5 @@
 <?php
+session_start(); //Nicht vergessen
 require_once("connect.php");
 ?>
 

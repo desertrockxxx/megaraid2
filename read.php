@@ -73,7 +73,7 @@ $id = $_GET['id'];
         
         <div class="col-sm-6">
         <!--Contra Section-->
-        <table class="table table-bordered" style="width:400px">
+        <table class="table table-bordered table-striped" style="width:400px">
             <thead>
                 <tr>
                     <th>Nachteile</th>
@@ -134,7 +134,7 @@ $id = $_GET['id'];
         </div>
         <div class="col-sm-6">
         <!--Counter-argument Section-->
-        <table class="table table-bordered" style="width:400px">
+        <table class="table table-bordered table-striped" style="width:400px">
             <thead>
                 <tr>
                     <th>Gegenargument</th>
@@ -196,7 +196,7 @@ $id = $_GET['id'];
         </div>
         <div class="col-sm-6">
         <!--Antithesis Section-->
-        <table class="table table-bordered" style="width:400px">
+        <table class="table table-bordered table-striped" style="width:400px">
             <thead>
                 <tr>
                     <th>Antithese</th>
